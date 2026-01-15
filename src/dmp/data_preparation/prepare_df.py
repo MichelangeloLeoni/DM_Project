@@ -66,7 +66,7 @@ def prepare_df(df, N_samples=None, descriptors=None, colonne=None, hists=False):
     # Creazione della colonna Weighted_Ratings (algoritmo IMDB)
     # Note: rimuove anche le colonne originali dei voti 
     df_prepared = add_weighted_rating(df_prepared, rating_col='Rating',
-                                      votes_col='NumUserRatings', new_col='WeightedRating')
+                                        votes_col='NumUserRatings', new_col='WeightedRating')
     
     # Trasforma colonne in scala logaritmica 
     columns_to_be_tranformed_in_log = ["LanguageEase"]

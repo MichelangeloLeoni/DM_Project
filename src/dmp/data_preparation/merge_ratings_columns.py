@@ -23,7 +23,11 @@ def add_weighted_rating(df: pd.DataFrame, rating_col='Rating', votes_col='NumUse
     C = df[rating_col].mean()  # voto medio globale
     if m is None:
         m = df[votes_col].mean()  # soglia media
-    
+
+    print(f"media numero voti: {m}")
+    print(f"voto medio globale: {C}")
+    print(min(v), max(v))
+
     df[new_col] = (v / (v + m)) * R + (m / (v + m)) * C
 
     df.drop(columns=[votes_col], inplace=True, axis=1)
