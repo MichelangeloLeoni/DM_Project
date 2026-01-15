@@ -428,7 +428,7 @@ Il \textit{binning} è stato determinato utilizzando il criterio di \textit{Stur
 \label{fig:sampling_comparison_agerec}
 \end{figure}
 
-Come si vede in figura, i percentili dei dati sono rimasti per lo più inalterati, e la forma della distribuzione rimane simile. Questo ci dimostra che un \textit{sampling} randomico può essere un'ottimo metodo per ridurre la quantità di dati pur mantenedo le caratteristiche importanti della distribuzione, almeno per quanto riguarda $2000$ \textit{samples}. 
+Come si vede in figura, i percentili dei dati sono rimasti per lo più inalterati, e la forma della distribuzione rimane simile. Questo ci dimostra che un \textit{sampling} randomico può essere un'ottimo metodo per ridurre la quantità di dati pur mantenedo le caratteristiche importanti della distribuzione, almeno per quanto riguarda $2000$ \textit{samples}. Tuttavia, nel seguito abbiamo utilizzato l'intero \textit{dataset} per minimizzare perdite di informazione, in quanto i nostri algoritmi compieavno il loro lavoro in un tempo soddisfacentemente breve. La tecnica comunque rimane utile ed efficiente per quantità di dati maggiori
 \section{Clustering}
 \label{sec:clustering}
 
@@ -441,7 +441,7 @@ L’analisi si è concentrata principalmente sulla relazione tra \textit{Weighte
 Come prima analisi abbiamo utilizzato un algoritmo di \textit{density-based clustering}, come mostrato nelle figure \ref{fig:db_numdes_weightedr} e \ref{fig:db_weightedr_agerec}. 
 
 L'algoritmo DBSCAN è governato da due iperparametri fondamentali: il raggio $\varepsilon$ e il numero minimo di punti $N_{min}$. Per la determinazione dei valori ottimali, si è proceduto fissando inizialmente $N_{min}$ e derivando $\varepsilon$ mediante l'analisi del grafico delle k-distanze (k-distance plot).
-Nello specifico, è stata calcolata la distanza di ogni punto dal suo $N_{min}$-esimo vicino più prossimo; tali distanze sono state successivamente ordinate in modo crescente, come mostrato nelle Figure \ref{fig:db_numdes_weightedr} e \ref{fig:db_weightedr_agerec}. Il valore di soglia per $\varepsilon$ è stato identificato in corrispondenza del 'gomito' (knee point) della curva, ovvero il punto in cui si osserva un drastico incremento della pendenza. Tale criterio permette di definire una soglia di densità che include nei cluster i punti spazialmente coesi, relegando a rumore (outliers) le osservazioni caratterizzate da distanze inter-punto eccessivamente elevate. 
+Nello specifico, è stata calcolata la distanza di ogni punto dal suo $N_{min}$-esimo vicino più prossimo; tali distanze sono state successivamente ordinate in modo crescente, come mostrato nelle Figure \ref{fig:db_numdes_weightedr} e \ref{fig:db_weightedr_agerec}. Il valore di soglia per $\varepsilon$ è stato identificato in corrispondenza del 'gomito' della curva, ovvero il punto in cui si osserva un drastico incremento della pendenza. Tale criterio permette di definire una soglia di densità che include nei cluster i punti spazialmente coesi, relegando a rumore (outliers) le osservazioni caratterizzate da distanze inter-punto eccessivamente elevate. 
 
 \begin{figure}[ht!]
 \includegraphics[width=0.9\linewidth]{../figures/clustered_scatters/dbscan_numdesires_vs_weightedrating.png}
